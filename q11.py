@@ -11,3 +11,12 @@
 ## E,2,3
 ## E,3,3
 ##
+with open('data.csv', 'r') as f:
+    for linea in f.readlines():
+        c = linea.split('\t')[3].replace(',','')
+        d = linea.split('\t')[4] 
+        l = d.split(',')
+        b = [linea.split('\t')[0]]
+        for i in b:
+            print(i+','+str(len(c))+','+str(len(l)))
+            
