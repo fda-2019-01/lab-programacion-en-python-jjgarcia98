@@ -10,3 +10,14 @@
 ## E,11
 ## E,16
 ##
+with open('data.csv', 'r') as f:
+    for linea in f.readlines():
+        d = linea.split('\t')[4] .replace('\n','')
+        b = [linea.split('\t')[0]]
+        a=("".join([x for x in d if x.isdigit()]))
+        x=0
+        for i in a:
+            x = x+int(i)
+        for i in b:
+            print(i+','+str(x))
+            
