@@ -17,3 +17,15 @@
 ## ('9', ['A', 'B', 'C', 'E'])
 ##
 ##
+txt = open('data.csv','r').readlines()
+txt = [row[0:-1]for row in txt]
+txt = [line.replace('\t','')for line in txt]
+c = sorted(set([row[1]for row in txt]))
+s = [[row[0],row[1]]for row in txt]
+aa =0
+a = ()
+for i in c:
+    aa = sorted(set([row[0] for row in s[:]if row[1]==i]))
+    a = (str(i),(aa))
+    print(a)
+    
